@@ -56,7 +56,7 @@ void Load_Drow_Dialog(void)
 {
 	LCD_Clear(WHITE);
  	POINT_COLOR=BLUE;
-	LCD_ShowString(lcddev.width-24,0,200,16,16,"RST");
+	LCD_ShowString(lcddev.width-24,0,200,16,16,(u8 *)"RST");
   	POINT_COLOR=RED;
 }
 
@@ -179,7 +179,7 @@ void ctp_test(void)
 						lastpos[t][0] = tp_dev.x[t];
 						lastpos[t][1] = tp_dev.y[t];
 					}
-					lcd_draw_bline(lastpos[t][0],lastpos[t][1],tp_dev.x[t],tp_dev.y[t],2,POINT_COLOR_TBL[t]);//闁汇垼宕甸崵�??
+					lcd_draw_bline(lastpos[t][0],lastpos[t][1],tp_dev.x[t],tp_dev.y[t],2,POINT_COLOR_TBL[t]);//????????????
 					lastpos[t][0]=tp_dev.x[t];
 					lastpos[t][1]=tp_dev.y[t];
 					if(tp_dev.x[t]>(lcddev.width-24)&&tp_dev.y[t]<20)
@@ -242,7 +242,7 @@ int main(void)
   LCD_ShowString(30,110,200,16,16,(uint8_t *)"The First Test");
   LCD_ShowString(30,130,200,12,12,(uint8_t *)"2021/4/8");
 
-  if(tp_dev.touchtype!=0XFF)LCD_ShowString(30,130,200,16,16,"Press KEY0 to Adjust");
+  if(tp_dev.touchtype!=0XFF)LCD_ShowString(30,130,200,16,16,(u8 *)"Press KEY0 to Adjust");
   delay_ms(1500);
   Load_Drow_Dialog();
 
